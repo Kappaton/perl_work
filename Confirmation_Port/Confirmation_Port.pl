@@ -15,8 +15,10 @@ my $sock = IO::Socket::INET->new(
     PeerPort=>$ARGV[1],
     Proto=>$ARGV[2],
     Timeout=>5,
-) or die "Close $ARGV[1] port!\n";
+) or die "Close $ARGV[1]\/$ARGV[2] port!\n";
 
 if ($sock){
-    print "Open $ARGV[1] port!\n";
+    print "Open $ARGV[1]\/$ARGV[2] port!\n";
+} else {
+    print "Error!\n";
 }
